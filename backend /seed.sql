@@ -72,4 +72,16 @@ VALUES(1,1),
 INSERT INTO comments (text, movie_id) 
 VALUES('Great Movie',1),
 ('Amazing Film',2),
-('What a waste of money and time',2);
+('What a waste of money and time',2),
+('I hope theres another one',5),
+('Classic',3),
+('Disney never ceazes to amaze me',10),
+('Great emotional ending',8),
+('Best movie i have seen all year',6),
+('Great Action Scenes',5),
+('Had me at these edge of my seat the entire time',2),
+('eeh the older version was better',5),
+('Naaa that was AMAZING !',4),
+(' sah-dah-tay',4),
+('This for all my homies on the west-side',9),
+('I would honestly still go',7);
