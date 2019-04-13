@@ -68,3 +68,8 @@ VALUES(1,1),
 (9.5,7),
 (10,8),
 (10.5,9);
+
+INSERT INTO comments (text, movie_id) 
+VALUES('Great Movie',1),
+('Amazing Film',2),
+('What a waste of money and time',2);
