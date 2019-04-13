@@ -40,4 +40,10 @@ VALUES ('The Meg',1, 'https://m.media-amazon.com/images/M/MV5BMjg0MzA4MDE0N15BMl
 ('Straight Outta Compton',9,'https://m.media-amazon.com/images/M/MV5BMTA5MzkyMzIxNjJeQTJeQWpwZ15BbWU4MDU0MDk0OTUx._V1_.jpg'),
 ('CoCo',10,'https://m.media-amazon.com/images/M/MV5BYjQ5NjM0Y2YtNjZkNC00ZDhkLWJjMWItN2QyNzFkMDE3ZjAxXkEyXkFqcGdeQXVyODIxMzk5NjA@._V1_SY1000_CR0,0,699,1000_AL_.jpg');
 
+INSERT INTO genres ( id, genre ) 
+VALUES (3,'Action'),
+(10,'Animation'),
+(6,'Adventure'),
+(4,'Comedy'),
+(1, 'Thriller');
 
