@@ -19,9 +19,8 @@ movieService.read = (id) => {
 
 movieService.readEverything = (id) => {
     const sql = `
-    SELECT movies. *, genres.genre
-    FROM movies JOIN genres
-    ON movies.genre_id=genres.id
+    SELECT movies.*
+    FROM movies
     WHERE movies.id=$[id]`
     return db.one(sql, {id})
 }
