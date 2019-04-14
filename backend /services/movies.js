@@ -21,7 +21,7 @@ movieService.readAll = () => {
     const sql = `
     SELECT * 
     FROM movies`
-    return db.any(sql,{id})
+    return db.any(sql)
 }
 
 movieService.update = (id, title, genre_id, img_url) => {
@@ -44,4 +44,4 @@ movieService.delete = (id) => {
 }
 
 
-model.exports = movieService;
+module.exports = movieService;
