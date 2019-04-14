@@ -38,3 +38,17 @@ commentRouter.post('/', (req, res, next)=>{
         next(err);
     });
 });
+
+// Update Comment
+commentRouter.put('/:id', (req, res, next)=> {
+    const { id } =req.params;
+    const { text, movie_id} = req.body;
+
+    CommentService.update(id, text, movie_id)
+    .then(()=>{
+        res.json("Success: Comment updated");
+    })
+    .catch(err => {
+        next(err);
+    });
+ });
