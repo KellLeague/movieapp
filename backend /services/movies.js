@@ -3,19 +3,31 @@ const movieService = {}
 
 movieService.create = (title, genre_id, img_url) => {
     const sql=`
-    INSERT INTO movies(title, genre_id, img_url)
-    VALUES ($[title], $[genre_id], $[img_url])
+    INSERT INTO 
+    movies (title, genre_id, img_url)
+    VALUES 
+    ($[title], $[genre_id], $[img_url])
     RETURNING id`;
-    return db.one (sql, {title, genre_id, img_url})
-}
+    return db.one (sql, {title, genre_id, img_url});
+};
 
 movieService.read = (id) => {
     const sql = `
     SELECT *
-    FROM movies
-    WHERE id=$[id]`
-    return db.one(sql, {id})
-}
+    FROM 
+    movies
+    WHERE id=$[id]`;
+    return db.one(sql, {id});
+};
+
+movieService.readGenre = (genre) => {
+    const sql = `
+    SELECT *
+    FROM 
+    movies
+    WHERE movies.genre_id=$[genre]`;
+    return db.any(sql, {genre});
+};
 
 movieService.readEverything = (id) => {
     const sql = `
@@ -34,22 +46,25 @@ movieService.readAll = () => {
 
 movieService.update = (id, title, genre_id, img_url) => {
     const sql = `
-    UPDATE movies
+    UPDATE 
+    movies
     SET
-    id=$[id],
     title=$[title],
     genre_id=$[genre_id],
     img_url=$[img_url]
-    WHERE id =$[id]`
-    return db.none(sql, {title, genre_id, img_url})
-}
+    WHERE
+    movies.id =$[id]`;
+    return db.none(sql, {id, title, genre_id, img_url});
+};
 
 movieService.delete = (id) => {
     const sql = `
-    DELETE movies
-    WHERE id=$[id]`
-    return db.none(sql, {id})
-}
+    DELETE FROM 
+    movies
+    WHERE 
+    id=$[id]`;
+    return db.none(sql, {id});
+};
 
 
 module.exports = movieService;
