@@ -12,3 +12,16 @@ ratingRouter.get('/all', (req, res, next)=>{
         next(err);
     });
 });
+
+ratingRouter.get('/:id', (req, res, next)=>{
+
+    const { id } = req.params;
+
+    RatingService.read(id)
+    .then(data => {
+        res.json(data);
+    })
+    .catch(err => {
+        next(err);
+    });
+});
