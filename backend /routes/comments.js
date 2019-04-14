@@ -12,3 +12,16 @@ commentRouter.get('/all', (req, res, next)=> {
         next(err);
     });
 });
+
+
+commentRouter.get('/:id', (req, res, next)=> {
+    const { id} = req.params;
+
+    CommentService.read(id)
+    .then(data => {
+        res.json(data);
+    })
+    .catch(err => {
+        next(err);
+    });
+});
