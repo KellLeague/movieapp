@@ -24,7 +24,17 @@ movieService.readAll = () => {
     return db.any(sql,{id})
 }
 
-
+movieService.update = (id, title, genre_id, img_url) => {
+    const sql = `
+    UPDATE movies
+    SET
+    id=$[id],
+    title=$[title],
+    genre_id=$[genre_id],
+    img_url=$[img_url]
+    WHERE id =$[id]`
+    return db.none(sql, {title, genre_id, img_url})
+}
 
 
 
