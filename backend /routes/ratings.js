@@ -38,3 +38,18 @@ ratingRouter.post('/', (req, res, next) => {
         next(err);
     });
 });
+
+
+// Update RATING
+ratingRouter.put('/:id', (req, res, next)=> {
+    const { id } = req.params;
+    const { stars, movie_id} =res.body;
+
+    RatingService.update(id, stars, movie_id)
+    .then(()=>{
+        res.json("Success: Rating updated");
+    })
+    .catch(err => {
+        next(err);
+   });
+});
