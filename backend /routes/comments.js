@@ -52,3 +52,16 @@ commentRouter.put('/:id', (req, res, next)=> {
         next(err);
     });
  });
+
+ // Delete Comment
+ commentRouter.delete('/:id', (req, res, next) => {
+    const { id } = req.params;
+
+    CommentService.delete(id)
+    .then(() => {
+        res.json("Success: Comment deleted");
+     })
+     .catch(err => {
+        next(err);
+    });
+});
