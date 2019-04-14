@@ -17,7 +17,12 @@ movieService.read = (id) => {
     return db.one(sql, {id})
 }
 
-
+movieService.readAll = () => {
+    const sql = `
+    SELECT * 
+    FROM movies`
+    return db.any(sql,{id})
+}
 
 
 
