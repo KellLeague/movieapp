@@ -10,3 +10,14 @@ CommentService.readAll = () => {
     `;
     return db.any(sql);
 };
+
+
+CommentService.read = (id) => {
+    const sql = `
+    SELECT *
+    FROM comments
+    WHERE
+    comments.id = $[id]
+    `;
+    return db.any(sql, { id });
+};
