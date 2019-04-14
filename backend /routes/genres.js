@@ -28,3 +28,19 @@ genreRouter.post('/', (req, res, next) => {
         next(err);
     });
 });
+
+
+//UPDATE GENRE
+genreRouter.put('/:id', (req, res, next) => {
+    const { id } = req.params;
+    const { genre } = req.body;
+
+    genreService.update(id, genre)
+    .then(()=>{
+        res.json("Success: Genre updated");
+    })
+    .catch(err => {
+        next(err);
+    });
+
+});
