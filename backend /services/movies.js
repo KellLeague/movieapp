@@ -9,6 +9,18 @@ movieService.create = (title, genre_id, img_url) => {
     return db.one (sql, {title, genre_id, img_url})
 }
 
+movieService.read = (id) => {
+    const sql = `
+    SELECT *
+    FROM movies
+    WHERE id=$[id]`
+    return db.one(sql, {id})
+}
+
+
+
+
+
 
 
 model.exports = movieService;
