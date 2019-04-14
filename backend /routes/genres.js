@@ -44,3 +44,19 @@ genreRouter.put('/:id', (req, res, next) => {
     });
 
 });
+
+// Delete Genre
+genreRouter.delete('/:id', (req, res, next)=> {
+    const { id } = req.params;
+
+    genreService.delete(id)
+    .then(()=>{
+        res.json("Success: Genre deleted");
+    })
+    .catch(err => {
+      next(err);   
+    });
+});
+
+//Genre done
+module.exports = genreRouter;
