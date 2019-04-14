@@ -25,3 +25,16 @@ commentRouter.get('/:id', (req, res, next)=> {
         next(err);
     });
 });
+
+//CREATE COMMENT
+commentRouter.post('/', (req, res, next)=>{
+    const {text, movie_id} = req.body;
+
+    CommentService.create(text)
+    .then(data => {
+        res.json(`Success: Comment created with id: ${data.id}`);
+    })
+    .catch(err => {
+        next(err);
+    });
+});
