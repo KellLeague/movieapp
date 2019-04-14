@@ -48,3 +48,18 @@ CommentService.update = (id, text, movie_id) => {
     `;
     return db.none(sql, {id, text, movie_id});
 };
+
+
+
+//DELETE
+CommentService.delete = (id) =>  {
+    const sql = `
+    DELETE FROM
+    comments
+    WHERE
+    id = $[id]
+    `;
+    return db.none(sql, { id });
+};
+
+module.exports = CommentService;
