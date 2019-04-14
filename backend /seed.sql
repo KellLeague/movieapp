@@ -6,12 +6,12 @@ CREATE DATABASE movieapp;
 CREATE TABLE movies (
 id SERIAL PRIMARY KEY ,
 title VARCHAR NOT NULL,
-genre_id INTEGER UNIQUE ,
+genre_id INTEGER NOT NULL ,
 img_url VARCHAR NOT NULL
 );
 
 CREATE TABLE genres (
-  id INTEGER REFERENCES movies(genre_id),
+  id SERIAL PRIMARY KEY,
   genre VARCHAR NOT NULL
 );
 
