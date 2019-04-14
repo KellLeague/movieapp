@@ -10,9 +10,10 @@ class  Genres extends React.Component {
         }
     }
 
-    render()
-    return(){
+    render(){
+    return(
         <h1>Genres Page</h1>
+    )
     }
 }
 export default Genres;
