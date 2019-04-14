@@ -36,6 +36,12 @@ movieService.update = (id, title, genre_id, img_url) => {
     return db.none(sql, {title, genre_id, img_url})
 }
 
+movieService.delete = (id) => {
+    const sql = `
+    DELETE movies
+    WHERE id=$[id]`
+    return db.none(sql, {id})
+}
 
 
 model.exports = movieService;
