@@ -31,9 +31,14 @@ movieService.readGenre = (genre) => {
 
 movieService.readEverything = (id) => {
     const sql = `
-    SELECT movies.*
+    SELECT comments.*, movies.*, ratings.*
     FROM movies
+    JOIN comments
+    ON movies.id = comments.id
+    JOIN ratings
+    ON ratings.id = movies.id
     WHERE movies.id=$[id]`
+
     return db.one(sql, {id})
 }
 

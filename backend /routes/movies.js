@@ -24,18 +24,25 @@ app.get('/', (req, res)=>{
 .catch(err => console.log(err))
 })
 
-app.get('/:id',(req,res) => {
-    const {id} = req.params
-movieService.readEverything(id)
-.then (data => res.send(data))
-.catch(err => console.log(err))
-})
+// app.get('/:id',(req,res) => {
+//     const {id} = req.params
+// movieService.readEverything(id)
+// .then (data => res.send(data))
+// .catch(err => console.log(err))
+// })
 
 app.get('/genre/:genre_id', (req, res)=>{
     const { genre_id } = req.params;
     movieService.readGenre(genre_id)
     .then (data => res.send(data))
 .catch(err => console.log(err))
+})
+
+app.get('/:id', (req, res)=>{
+    const { id } = req.params;
+    movieService.readEverything(id)
+    .then (data => res.send(data))
+    .catch(err => console.log(err))
 })
 
 //UPDATE
