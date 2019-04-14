@@ -13,6 +13,16 @@ app.post('/', (req, res, next) => {
     .catch(err => console.log(err))
 })
 
+// app.get('/byGenre',(req,res) => {
+
+// }) 
+//READ
+app.get('/', (req, res)=>{
+    movieService.readAll()
+    .then (data => res.send(data))
+.catch(err => console.log(err))
+})
+
 
 
 
