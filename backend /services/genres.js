@@ -21,3 +21,17 @@ genreService.create = (genre) => {
     `;
     return db.one(sql, { genre });
 };
+
+
+//UPDATE
+genreService.update = (id, genre) => {
+    const sql =`
+    UPDATE
+    genres
+    SET
+    genre = $[genre]
+      WHERE
+      genres.id = $[id]
+    `;
+    return db.none(sql, {id, genre});
+};
