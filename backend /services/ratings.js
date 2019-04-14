@@ -18,3 +18,15 @@ RatingService.read = (id) => {
     `;
     return db.any(sql, {id});
 };
+
+//CREATE
+RatingService.create = ( stars, movie_id) => {
+    const sql = `
+    INSERT INTO
+    ratings ( stars, movie_id)
+    VALUES
+    ($[stars], $[movie_id]);
+    RETURNING id
+    `;
+    return db.one(sql, {stars, movie_id});
+};
