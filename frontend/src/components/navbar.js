@@ -10,7 +10,7 @@ class Navbar extends Component {
         return(
             <HashRouter>
                 <>
-          <div className='headercontainer'>
+          <div className='headercontainer' >
           <Link className='nav-link' to='/' >Home</Link>
           <Link className='nav-link' to='/movies' >All Movies</Link>
           <Link className='nav-link' to='/movies/byGenre' >By Genre</Link>
