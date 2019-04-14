@@ -1,4 +1,5 @@
 import React from 'react';
+import { Component } from 'react-router-dom';
 
 class Movies extends React.Component{
 constructor(props){
