@@ -23,7 +23,14 @@ app.get('/', (req, res)=>{
 .catch(err => console.log(err))
 })
 
+app.get('/:id',(req,res) => {
+    const {id} = req.params
+movieService.readEverything(id)
+.then (data => res.send(data))
+.catch(err => console.log(err))
+})
 
+//UPDATE
 
 
 module.exports = app;
