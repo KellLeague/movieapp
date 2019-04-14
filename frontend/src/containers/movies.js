@@ -14,7 +14,7 @@ constructor(props){
         render(){
         return (
     <form >
-        <input type='text'/>
+        <input type='text'/><button type='submit' >Search by Title</button>
     </form>
         )
    
