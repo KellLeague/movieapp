@@ -14,3 +14,17 @@ genreRouter.get('/', (req, res, next) => {
         next(err);
     });
 });
+
+//CREATE GENRE
+genreRouter.post('/', (req, res, next) => {
+    const { genre } =res.body;
+
+    genreService.create(genre)
+    .then(data =>{
+        res.json(`Success: Product created with id: ${data.id}`); 
+
+    })
+    .catch(err =>{
+        next(err);
+    });
+});
