@@ -14,7 +14,16 @@ constructor(props){
         render(){
         return (
     <form >
-        <input type='text'/><button type='submit' >Search by Title</button>
+        <div className='container' >
+            <div className='input-group mb-3' >
+          <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+         <div className='input-group-append' >
+                       <button class="btn btn-outline-secondary" type="button">Search by Title</button>
+         </div>
+        </div>
+           
+        </div>
+       
     </form>
         )
    
@@ -22,3 +31,4 @@ constructor(props){
   } 
 }
 export default Movies;
+
