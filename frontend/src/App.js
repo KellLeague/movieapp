@@ -12,7 +12,7 @@ class App extends Component {
        <HashRouter>
       <>
       <Navbar/>
-     
+      <Route path='/' exact component={Home}/>
       </>
       </HashRouter>
     );
