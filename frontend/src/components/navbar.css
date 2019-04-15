@@ -4,6 +4,17 @@
     background-color: navy;
     color: white;
     height: 75px;
-    
-
+    font-weight: 20px;
     }
+
+.home{
+    justify-content: right;
+    
+}
+
+.movies{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+
+}

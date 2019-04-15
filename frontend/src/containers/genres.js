@@ -6,9 +6,13 @@ class  Genres extends React.Component {
         super(props)
 
         this.state = {
-            genres:[]
+            genres:[],
+            input:''
         }
     }
+
+
+    // handleInput (e) 
 
     render(){
     return(
