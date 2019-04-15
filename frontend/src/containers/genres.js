@@ -12,7 +12,18 @@ class  Genres extends React.Component {
 
     render(){
     return(
-        <h1>Genres Page</h1>
+        <form >
+        <div className='container' >
+            <div className='input-group mb-3' >
+          <input type="text" class="form-control" placeholder="Movie Genre" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+         <div className='input-group-append' >
+                      
+         </div>
+        </div>
+           
+        </div>
+       
+    </form>
     )
     }
 }
