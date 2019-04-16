@@ -27,7 +27,13 @@ class Movies extends React.Component {
     render() {
         console.log('movies state:',this.state.movies)
         const {movies} = this.state;
- {
+        if(!movies.length){
+            return(
+            <>
+                <h1>waiting...</h1>
+            </>
+            )
+        } else {
             return (
                 <>
                 <form>
