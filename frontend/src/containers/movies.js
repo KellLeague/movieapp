@@ -47,7 +47,17 @@ class Movies extends React.Component {
     
                     </div>
                 
-
+                    <div className='container row mx-auto' >
+                        {
+                            movies.map((e,i)=> {
+                                return(
+                                    <>
+                                    <DisplayMovie key={i} movies={e}/>
+                                    </>
+                                )
+                            })
+                        }
+                    </div>
                 </form>
                 </>
             );
