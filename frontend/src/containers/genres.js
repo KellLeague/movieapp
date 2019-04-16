@@ -21,7 +21,6 @@ class  Genres extends React.Component {
     }
 
     render(){
-        console.log(this.state);
 const { genres } = this.state
     return(
         <form >

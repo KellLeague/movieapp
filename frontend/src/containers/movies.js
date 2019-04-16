@@ -43,4 +43,3 @@ class Movies extends React.Component {
     }
 }
 export default Movies;
-
