@@ -16,20 +16,31 @@ class  Genres extends React.Component {
         this.setState ({input: e.target.value})
     } 
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
     render(){
         console.log(this.state);
-
+const { genres } = this.state
     return(
         <form >
         <div className='container' >
             <div className='input-group mb-3' >
-          <input type="text" onChange={this.handleInput} class="form-control" placeholder="Movie Genre" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+          <input type="text" onChange={this.handleInput} value={this.state.input} class="form-control" placeholder="Movie Genre" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
          <div className='input-group-append' >
-                       <button class="btn btn-outline-secondary" type="button">Search by Genre</button>
+                       <button class="btn btn-outline-secondary" type="button" onClick={this.handleSubmit} >Search by Genre</button>
          </div>
         </div>
            
         </div>
+        <ol>
+            {
+                genres.map((e,i) => {
+                    return <li> {e} </li>
+                })
+            }
+        </ol>
        
     </form>
     )
